@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: url("./../images/bg.jpg");
+  background-size: cover;
+}
+.rocket {
+  width: 10rem;
+  height: 20rem;
+  background: linear-gradient(to top, #fff, #ddd);
+  position: absolute;
+  bottom: 10rem;
+  left: 50%;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  animation: shake 0.3s linear infinite alternate-reverse;
+  &::before {
+    content: "";
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    bottom: 0;
+    left: 0;
+    transform: translateY(80%);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  &__fin {
+    width: 6rem;
+    height: 6rem;
+    background-color: black;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    position: absolute;
+    top: 50%;
+    &-right {
+      left: 0;
+      transform: translateX(-100%) rotate(-90deg);
+    }
+    &-left {
+      right: 0;
+      transform: translateX(100%) rotate(90deg);
+    }
+  }
+  &__smoke {
+    position: absolute;
+    height: 7rem;
+    width: 3rem;
+    background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0.5));
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(120%);
+    animation: gradient 0.1s linear infinite;
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(1rem);
+  }
+}
+@keyframes gradient {
+  from {
+    background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0.5));
+  }
+  to {
+    background: linear-gradient(to top, #fff 90%, rgba(255, 255, 255, 0));
+  }
+}
