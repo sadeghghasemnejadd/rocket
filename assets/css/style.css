@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "xirod";
+  src: url("./../fonts/xirod.ttf");
+}
+@font-face {
+  font-family: "brush";
+  src: url("./../fonts/Brush.ttf");
+}
 * {
   padding: 0;
   margin: 0;
@@ -74,6 +82,83 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(120%);
   animation: gradient 0.1s linear infinite;
+}
+
+.lunch {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: green;
+  box-shadow: 0 0 0rem 1rem #063f06;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: xirod;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.lunch:hover {
+  transform: translateY(-0.6rem);
+  box-shadow: 0 0 0rem 0.8rem #063f06;
+}
+
+.abort-enable {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: red;
+  box-shadow: 0 0 0rem 1rem #5e0808;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: xirod;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.abort-enable:hover {
+  transform: translateY(-0.6rem);
+  box-shadow: 0 0 0rem 0.8rem #5e0808;
+}
+
+.abort-disable {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: #777676;
+  box-shadow: 0 0 0rem 1rem black;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: xirod;
+  transition: all 0.3s;
+  cursor: not-allowed;
+}
+
+.seconds {
+  font-family: "brush";
+  font-size: 20rem;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes shake {
