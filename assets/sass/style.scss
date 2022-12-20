@@ -30,6 +30,7 @@ body {
   border-bottom-right-radius: 3rem;
   border-bottom-left-radius: 3rem;
   animation: shake 0.3s linear infinite alternate-reverse;
+
   &::before {
     content: "";
     top: 20%;
@@ -80,7 +81,19 @@ body {
     animation: gradient 0.1s linear infinite;
   }
 }
-.lunch {
+.rocket-lunch-animation {
+  animation: lunch 10s linear forwards;
+}
+.smoke-lunch-animation {
+  background: linear-gradient(
+    to top,
+    rgb(232, 173, 10),
+    rgba(255, 251, 18, 0.5)
+  );
+  animation: smoke 0.1s linear infinite;
+  border-radius: 1rem;
+}
+.lunch-enable {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -102,6 +115,25 @@ body {
     transform: translateY(-0.6rem);
     box-shadow: 0 0 0rem 0.8rem rgb(6, 63, 6);
   }
+}
+.lunch-disable {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: rgb(119, 118, 118);
+  box-shadow: 0 0 0rem 1rem black;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: xirod;
+  transition: all 0.3s;
+  cursor: not-allowed;
 }
 .abort-enable {
   width: 10rem;
@@ -145,6 +177,33 @@ body {
   transition: all 0.3s;
   cursor: not-allowed;
 }
+.restart-enable {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: yellow;
+  box-shadow: 0 0 0rem 1rem rgb(96, 99, 8);
+  position: absolute;
+  top: 40%;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 1.6rem;
+  font-family: xirod;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    transform: translate(50%, -0.6rem);
+    box-shadow: 0 0 0rem 0.8rem rgb(94, 8, 8);
+  }
+}
+.restart-disable {
+  display: none;
+}
 .seconds {
   font-family: "brush";
   font-size: 20rem;
@@ -153,6 +212,60 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+.modal {
+  font-family: xirod;
+  width: 35%;
+  padding: 3.2rem;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(61, 4, 4);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  border-radius: 3rem;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.6rem;
+    & button {
+      width: 7rem;
+      height: 7rem;
+      font-family: xirod;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+    }
+    &--yes {
+      background-color: red;
+      box-shadow: 0 0 0 0.8rem rgb(94, 8, 8);
+      transition: all 0.3s;
+      &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0 0rem 0.4rem rgb(94, 8, 8);
+      }
+    }
+    &--no {
+      background-color: green;
+      box-shadow: 0 0 0rem 0.8rem rgb(6, 63, 6);
+      transition: all 0.3s;
+      &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 0 0rem 0.4rem rgb(6, 63, 6);
+      }
+    }
+  }
+}
+
 @keyframes shake {
   from {
     transform: translateY(0);
@@ -167,5 +280,29 @@ body {
   }
   to {
     background: linear-gradient(to top, #fff 90%, rgba(255, 255, 255, 0));
+  }
+}
+@keyframes lunch {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(70rem, -60rem) rotate(60deg) scale(0);
+  }
+}
+@keyframes smoke {
+  from {
+    background: linear-gradient(
+      to top,
+      rgb(232, 173, 10),
+      rgba(255, 251, 18, 0.5)
+    );
+  }
+  to {
+    background: linear-gradient(
+      to top,
+      rgb(232, 173, 10) 90%,
+      rgba(255, 255, 255, 0)
+    );
   }
 }

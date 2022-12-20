@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/javascript/main.js" defer></script>
     <title>rocket</title>
   </head>
   <body>
@@ -13,8 +14,16 @@
       <div class="rocket__fin rocket__fin-left"></div>
       <div class="rocket__smoke"></div>
     </div>
-    <div class="lunch">lunch</div>
-    <div class="abort-disable">abort</div>
-    <div class="seconds">10</div>
+    <div class="lunch lunch-enable">lunch</div>
+    <div class="abort abort-disable">abort</div>
+    <div class="seconds"></div>
+    <div class="modal">
+      <p class="modal__text">you want to cancel lunch. Are you sure?</p>
+      <div class="modal__btn">
+        <button class="modal__btn--yes">yes</button>
+        <button class="modal__btn--no">no</button>
+      </div>
+    </div>
+    <div class="restart restart-disable">RESTART</div>
   </body>
 </html>
