@@ -15,10 +15,33 @@
 html {
   font-size: 62.5%;
 }
+@media only screen and (max-width: 90em) {
+  html {
+    font-size: 55%;
+  }
+}
+@media only screen and (max-width: 64em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 48em) {
+  html {
+    font-size: 45%;
+  }
+}
+@media only screen and (max-width: 27em) {
+  html {
+    font-size: 30%;
+  }
+}
 
 body {
   background: url("./../images/bg.jpg");
   background-size: cover;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .rocket {
@@ -28,11 +51,18 @@ body {
   position: absolute;
   bottom: 10rem;
   left: 50%;
+  transform: translateX(-50%);
   border-top-left-radius: 10rem;
   border-top-right-radius: 10rem;
   border-bottom-right-radius: 3rem;
   border-bottom-left-radius: 3rem;
   animation: shake 0.3s linear infinite alternate-reverse;
+}
+@media only screen and (max-width: 48em) {
+  .rocket {
+    width: 8rem;
+    height: 18rem;
+  }
 }
 .rocket::before {
   content: "";
@@ -64,6 +94,12 @@ body {
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
   position: absolute;
   top: 50%;
+}
+@media only screen and (max-width: 48em) {
+  .rocket__fin {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 .rocket__fin-right {
   left: 0;
@@ -113,6 +149,11 @@ body {
   transition: all 0.3s;
   cursor: pointer;
 }
+@media only screen and (max-width: 90em) {
+  .lunch-enable {
+    top: 30%;
+  }
+}
 .lunch-enable:hover {
   transform: translateY(-0.6rem);
   box-shadow: 0 0 0rem 0.8rem #063f06;
@@ -137,6 +178,11 @@ body {
   transition: all 0.3s;
   cursor: not-allowed;
 }
+@media only screen and (max-width: 90em) {
+  .lunch-disable {
+    top: 30%;
+  }
+}
 
 .abort-enable {
   width: 10rem;
@@ -156,6 +202,11 @@ body {
   font-family: xirod;
   transition: all 0.3s;
   cursor: pointer;
+}
+@media only screen and (max-width: 90em) {
+  .abort-enable {
+    top: 30%;
+  }
 }
 .abort-enable:hover {
   transform: translateY(-0.6rem);
@@ -180,6 +231,11 @@ body {
   font-family: xirod;
   transition: all 0.3s;
   cursor: not-allowed;
+}
+@media only screen and (max-width: 90em) {
+  .abort-disable {
+    top: 30%;
+  }
 }
 
 .restart-enable {
@@ -219,6 +275,11 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+@media only screen and (max-width: 90em) {
+  .seconds {
+    top: 5%;
+  }
+}
 
 .modal {
   font-family: xirod;
@@ -236,6 +297,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   display: none;
+  line-height: 5rem;
 }
 .modal__text {
   font-size: 1.6rem;
@@ -254,6 +316,11 @@ body {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+}
+@media only screen and (max-width: 27em) {
+  .modal__btn button {
+    font-size: 1.2rem;
+  }
 }
 .modal__btn--yes {
   background-color: red;
@@ -276,10 +343,10 @@ body {
 
 @keyframes shake {
   from {
-    transform: translateY(0);
+    transform: translateY(0) translateX(-50%);
   }
   to {
-    transform: translateY(1rem);
+    transform: translateY(1rem) translateX(-50%);
   }
 }
 @keyframes gradient {
@@ -295,7 +362,7 @@ body {
     transform: translate(0, 0);
   }
   to {
-    transform: translate(70rem, -60rem) rotate(60deg) scale(0);
+    transform: translate(700%, -300%) rotate(60deg) scale(0);
   }
 }
 @keyframes smoke {
